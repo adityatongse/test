@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{%  block content %}
+    <!-- body content -->
+    <div class="container" style="min-height: 452px">
+        <h3 class="mt-4 ">Employee List</h3>
+        <!-- Search bar -->
+        <!-- <div class="col-md-10 justify-content-center pt-3 mt-2 ">
+            <input type="text" id="SearchInput" class="searchItem form-control mb-3 " placeholder="Enter Employee ID/Name to Search Items"
+                name="searchitems">
+        </div> -->
+        <!-- Employee  List Code -->
+        <table class="table table-striped table-hover mt-5">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Desgination</th>
+                    <th>Employee Name</th>
+                </tr>
+            </thead>
+            <tbody id="ProductTable">
+                {% for j in employeeList %}
+                <tr>
+                   
+                    <td><a href="{{ url_for('users_details_page',user_id=j[0])}}">{{ j[0] }}</a></td>
+                    {% if  j[1] == 0: %}
+                    <td>Staff</td>
+                    {% elif j[1] == 1: %}
+                    <td>Manager</td>
+                    {% else %}
+                    <td>Super Admin</td>
+                    {% endif %}
+                    <td>{{ j[2] }}</td>
+                </tr>
+                {% endfor %}
+                
+
+            </tbody>
+        </table>
+    </div>
+ 
+ 
+ {% endblock %}

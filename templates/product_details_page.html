@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- body content -->
+    <div class="container">
+        
+        <h3 class="mt-4 pt-3">View Product Details</h3>
+        <form action="{{url_for('product_details_page', product_id=product_id)}}" method="get" target="_blank">
+            <div class="row">
+                <!-- Product id code  -->
+                <div class="mb-3 mt-4 col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Product ID/Barcode ID :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" readonly class="form-control-plaintext"
+                            value="{{ productdetails[0]}}">
+                    </div>
+                </div>
+                <!-- product name -->
+                <div class="mb-3 mt-4 col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Product Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" readonly class="form-control-plaintext"
+                            value="{{ productdetails[5]}}">
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="row">
+                <!-- product category -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Category :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                        value="{{ productdetails[3]}}">
+                </div>
+            </div>
+            <!-- product sub-category -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Category Code :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                         value="{{ productdetails[4]}}">
+                </div>
+            </div>
+
+            <div class="row">
+                
+            </div>
+            <!-- product size -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Size :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                         value="{{ productdetails[9]}}">
+                </div>
+            </div>
+            <!-- product price -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Price :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                        value="{{ productdetails[7]}}">
+                </div>
+            </div>
+            </div>
+
+            <div class="row">
+                
+            <!-- product stock quantity -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Stock Quantity :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                        value="{{ productdetails[12]}}">
+                </div>
+            </div>
+            <!-- product measure code -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Measure :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                        value="{{ productdetails[8]}}">
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                
+            <!-- Product manufacture date code -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Manufacture Date: :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                        value="{{ productdetails[11]}}">
+                </div>
+            </div>
+            <!-- Product Expiry date -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Expiry Date</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                        value="{{ productdetails[10]}}">
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <!-- product manufacturer -->
+            <div class="mb-3 mt-4 col-6">
+                <label for="exampleFormControlInput1" class="form-label">Product Manufacturer</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" readonly class="form-control-plaintext"
+                        value="{{ productdetails[1]}}">
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+ 
+{% endblock %}

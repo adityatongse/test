@@ -1,0 +1,80 @@
+{% extends "base.html" %} {% block content %}
+
+
+
+    <!-- body content -->
+    <form action="{{url_for('create_bill')}}" method="post" target="_blank">
+        <div class="container">
+            <!-- TODO-4 -->
+    <h3 class="mt-2 pt-3">Invoice Number :- invt0000123</h3>
+
+    <!-- Customer details -->
+    <!-- <div class="row mt-4">
+      <h5 class="col-6 mt-2">Name: {{customer_name}}</h5>
+      <h5 class="col-6 mt-2">Contact Number: {{customer_contact}}</h5>
+    </div>
+    <div class="row">
+      <h5 class="col-6 mt-2">Email: {{customer_email}}</h5>
+    </div> -->
+
+    <div class="bill-table mt-5" >
+            <!-- Products Scanned Code -->
+            <table class="table table-hover ">
+                <thead>
+                    <!-- Table Skeleton -->
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <!-- Table Body -->
+                <tbody id="ProductTable">
+                    {% for i in range (billing_items_barcodes|length) %}
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{billing_items_barcodes[i][1]}}</td>
+                    <td>{{billing_items_barcodes[i][2]}}</td>
+                    <td>{{billing_items_barcodes[i][3]}}</td>
+                    <td>{{billing_items_barcodes[i][3]*billing_items_barcodes[i][2]}}</td>     
+                </tr>
+                
+                {% endfor %}
+                
+
+                </tbody>
+                
+            </table>
+
+
+        </div>
+            <!-- calculating Grand Total -->
+            <div class="d-flex justify-content-end mt-3">
+                <!-- TODO -->
+                <h5 class="me-2 color-brand">Grand Total: </h5>
+                <h5 class="me-5 pe-5"> <span>Rs.</span> {{total_sum}}</h5> 
+            </div>
+        </div>
+
+
+<!-- scan more and send bill button -->
+
+
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-auto">
+                <a id="id-dashboard" name="btn-dashboard" class="btn btn-primary me-3"
+            href="{{url_for('dashboard')}}">Cancel</a>
+            <!-- TODO -->
+                 <a href="{{url_for('create_bill')}}"><button id="id-scanmore" name="btn-scanmore" class="btn btn-primary me-3" type="button">Scan
+                    More</button></a>
+                <a href="{{url_for('send_bill')}}"><button id="id-sendbill" name="btn-sendbill" class="btn btn-primary" type="button">Send
+                    Bill</button></a>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+ 

@@ -1,0 +1,163 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+        
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+    messages %}
+    {%if flash_type == 'success'%}
+    <P>{{flash_type}}</P>
+    <div class="flashes" role="alert">
+      <strong>{{ message.title() }}!</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="success"
+        aria-label="Close"
+      ></button>
+    </div>
+    {%endif%}
+    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+      <strong>{{ message.title() }}!</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="success"
+        aria-label="Close"
+      ></button>
+    </div>
+    
+    {% endfor %} {% endif %} {% endwith %}
+    <!-- body content -->
+    <div class="container mt-5">
+        <h3>Add New Product</h3>
+
+        <!-- <div class="card"> -->
+        <form action="{{url_for('add_new_product', flash_type ='sucess')}}" method="post" target="">
+            <div class="row">
+                <!-- product manufacuturer -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="ProductManufacturer" class="form-label">Product Manufacturer</label>
+                    <input autocomplete="off" type="text" class="form-control" id="productmanufacturer" name="productmanufacturer"
+                        placeholder="Enter Product  Manufacturer" />
+                </div>
+
+                <!-- product category -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="ProductCategory" class="form-label">Product Category </label>
+                    <input autocomplete="off"  type="text" class="form-control" id="productcategory" name="productcategory"
+                        placeholder="Enter Product Category" />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <!-- product name  -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="productname" class="form-label">Product Name</label>
+                    <input autocomplete="off"  type="text" class="form-control" id="productname" name="productname"
+                        placeholder="Enter Product Name" />
+                </div>
+
+                <!-- product price code  -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="ProductPrice" class="form-label">Product Price </label>
+                    <input autocomplete="off"  type="number" class="form-control" id="productprice" name="productprice"
+                        placeholder="Enter Product Price" />
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- product size code  -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="ProductSize" class="form-label">Product Size </label>
+                    <div class="input-group mb-3">
+                        <!-- dropdown menu -->
+                        <select class="form-select" name="productsize" id="productsize">
+                            <option selected>Choose....</option>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="3">Extra Large</option>
+                        </select>
+                        <label class="input-group-text" for="productsize">Options</label>
+                    </div>
+                </div>
+                <!-- product expiry code -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="ProductExpiryDate" class="form-label">Product Expiry Date </label>
+                    <input type="date" class="form-control" id="productexpirydate" name="productexpirydate"
+                        placeholder="Enter Product Expiry Date" />
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- product manufacturing code  -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="ProductManufactureDate" class="form-label">Product Manufacture Date </label>
+                    <input type="date" class="form-control" id="productmanufacturedate" name="productmanufacturedate"
+                        placeholder="Enter Product Manufacture Date" />
+                </div>
+                <!-- product measure -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="Productmeasure" class="form-label">Product Measure </label>
+                    <div class="input-group mb-3">
+                        <!-- dropdown menu -->
+                        <select class="form-select" name="productmeasure" id="productmeasure">
+                            <option selected>Choose....</option>
+                            <option value="1">unit</option>
+                            <option value="2">kg</option>
+                            <option value="3">Litre</option>
+                        </select>
+                        <label class="input-group-text" for="productmeasure">Options</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- product stock quantity  -->
+                <div class="col-6 mb-3 mt-4">
+                    <label for="ProductStockQuantity" class="form-label">Product Stock Quantity </label>
+                    <input autocomplete="off"  type="number" class="form-control" id="productstockquantity" name="productstockquantity"
+                        placeholder="Enter Product Stock Quantity" />
+                </div>
+            </div>
+
+
+
+            <!-- </div> -->
+            <!-- add and cancel button  -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-auto">
+                    <!-- TODO -->
+                    <!-- <button  type="submit"> -->
+                    <a id="id-dashboard" name="btn-dashboard" class="btn btn-primary me-5"
+                        href="{{url_for('dashboard')}}">Cancel</a>
+                    <!-- </button> -->
+                    <button id="id-addproduct" name="btn-addproduct" class="btn btn-primary" type="submit"
+                        data-bs-toggle="modal" data-bs-target="#ProductAddModal">
+                         Add Product
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    </div>
+
+    <!-- Product Added Successfully Modal 1 -->
+    <div class="modal fade" id="ProductAddModal" tabindex="-1" aria-labelledby="ProductAddModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h4>Product Added Successfully!</h4>
+                    <button type="{{url_for('dashboard')}}" class="btn btn-light btn-block ms-4"
+                        data-bs-dismiss="modal">
+                        <a>Close</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %} 

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript"> 
+      window.history.forward(); 
+      function noBack() { 
+          window.history.forward(); 
+      } 
+  </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InvenTree Software</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link href="/static/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-base pb-6">
+    <!-- Header   -->
+
+    <!-- navbar -->
+    <nav class="navbar bg-body-tertiary px-4 bg-brand">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1 color-base">InvenTree</span>
+        <div>
+          <a href="{{url_for('contactus')}}" class="nav-link-white">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="welcome-hero py-5 bg-brand px-0">
+      <div class="row px-5">
+        <div class="col-md-6 pt-3 mt-4">
+          <h1 class="mb-2 welcome-text">
+            Welcome to <span class="color-base">InvenTree</span>
+          </h1>
+          <p class="mb-0 mt-3 h5 fw-normal">
+            Your Ultimate Inventory Management Solution!
+          </p>
+          <p class="h5 fw-normal">Manage Inventory at ONE PLACE !</p>
+          <p>Easily manages inventory. Keep a central record.</p>
+          <a href="login">
+            <!-- <a type="submit" class="btn btn-light btn-outline-info btn-block mt-4 login-btn btn-lg">Login</a> -->
+            <button
+              type="submit"
+              class="btn login-btn toggle-button-white btn-lg mt-4"
+            >
+              Go To Login Page
+            </button>
+          </a>
+        </div>
+        <div class="col-md-6 pt-3 mt-3">
+          <img
+            src="/static/Image_Visuals.png"
+            class="img-fluid"
+            alt="Welcome_Image"
+            style="width: 100%; height: 280px"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- body content -->
+    <div class="container ">
+      <!-- Feature-row-1 -->
+      <div class="d-flex mt-5">
+        <div
+          class="card border-0 home-feature-item justify-content-center me-3 mb-3"
+          style="max-width: 540px"
+        >
+          <div class="row g-0">
+            <div
+              class="col-md-4 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="/static/Image2.png"
+                class="img-fluid feature-img p-3"
+                alt="Image2"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">What we do?</h5>
+                <p class="card-text text-sm">
+                  At InvenTree, we bring you a comprehensive and efficient
+                  inventory management system designed to streamline your
+                  business operations. Whether you're a small business or a
+                  large enterprise, our user-friendly platform caters to the
+                  needs of Admins, Inventory Managers, and Employees.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card border-0 home-feature-item justify-content-center mb-3"
+          style="max-width: 540px"
+        >
+          <div class="row g-0">
+            <div
+              class="col-md-4 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="/static/barcode.png"
+                class="img-fluid feature-img p-3"
+                alt="barcode"
+                style="width: 400px; justify-content: center"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Bar-code Scanning Made Easy!</h5>
+                <p class="card-text text-sm">
+                  Empower your employees with our intuitive bar-code scanning
+                  feature using the camera. Effortlessly add or remove products
+                  from your inventory, enhancing efficiency and accuracy in
+                  every transaction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature-row-2 -->
+      <div class="d-flex mt-2">
+        <div
+          class="card border-0 home-feature-item justify-content-center me-3 mb-3"
+          style="max-width: 540px"
+        >
+          <div class="row g-0">
+            <div
+              class="col-md-4 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="/static/Image_Login.png"
+                class="img-fluid feature-img p-3"
+                alt="Insightful"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Insightful Statistics.</h5>
+                <p class="card-text text-sm">
+                  Gain valuable insights into your inventory and consumer
+                  trends. Our app provides detailed inventory and consumer
+                  statistics, enabling you to make informed decisions for your
+                  business growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card border-0 home-feature-item justify-content-center mb-3"
+          style="max-width: 540px"
+        >
+          <div class="row g-0">
+            <div
+              class="col-md-4 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="/static/secure.png"
+                class="img-fluid feature-img p-3"
+                alt="secure"
+                style="width: 400px"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Secure and Reliable.</h5>
+                <p class="card-text text-sm">
+                  Rest easy knowing that your data is secure. InvenTree
+                  prioritizes the confidentiality and reliability of your
+                  information, providing you with a trustworthy platform for
+                  your business needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backup -->
+    <!-- <div class="row mt-5">
+      <div class="card col-3 p-3 border-0">
+        <img src="/static/Image2.png" class="img-fluid p-3" alt="Image2" />
+
+        <div class="card-body mt-3">
+          <h5>What we do?</h5>
+          <p class="card-text text-sm">
+            At InvenTree, we bring you a comprehensive and efficient inventory
+            management system designed to streamline your business operations.
+            Whether you're a small business or a large enterprise, our
+            user-friendly platform caters to the needs of Admins, Inventory
+            Managers, and Employees.
+          </p>
+        </div>
+      </div>
+
+      <div class="card col-3 ms-2 p-3 border-0">
+        <img
+          src="/static/barcode.png"
+          class="img-fluid"
+          alt="barcode"
+          style="width: 400px; justify-content: center"
+        />
+
+        <div class="card-body mt-3">
+          <h5>Bar-code Scanning Made Easy!</h5>
+          <p class="card-text text-sm">
+            Empower your employees with our intuitive bar-code scanning feature
+            using the camera. Effortlessly add or remove products from your
+            inventory, enhancing efficiency and accuracy in every transaction.
+          </p>
+        </div>
+      </div>
+
+      <div class="card col-3 ms-2 p-3 border-0">
+        <img src="/static/Image_Login.png" class="img-fluid" alt="Insightful" />
+
+        <div class="card-body mt-3">
+          <h5>Insightful Statistics.</h5>
+
+          <p class="card-text text-sm">
+            Gain valuable insights into your inventory and consumer trends. Our
+            app provides detailed inventory and consumer statistics, enabling
+            you to make informed decisions for your business growth.
+          </p>
+        </div>
+      </div>
+      <div class="card col-3 ms-2 p-3 border-0">
+        <img
+          src="/static/secure.png"
+          class="img-fluid"
+          alt="secure"
+          style="width: 400px"
+        />
+
+        <div class="card-body mt-3">
+          <h5>Secure and Reliable.</h5>
+
+          <p class="card-text text-sm">
+            Rest easy knowing that your data is secure. InvenTree prioritizes
+            the confidentiality and reliability of your information, providing
+            you with a trustworthy platform for your business needs.
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Footer -->
+    <footer class=" footer d-flex justify-content-between align-items-center px-5 py-4">
+      <p class="mb-0" style="color: white;">@ 2023 InvenTree, Inc</p>
+
+      <div class="d-flex justify-content-between align-items-center" style="min-width: 150px;">
+       
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

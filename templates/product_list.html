@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+ 
+
+{% block content %}
+    <!-- body content -->
+    <div class="container" style="min-height: 430px;">
+        
+ 
+        <h3 class="mt-5 ">Product List</h3>
+        <!-- Search bar -->
+        <!-- <div class="col-md-10 justify-content-center pt-3 mt-2 ">
+            <input type="text" id="SearchInput" class="searchItem form-control mb-3 "
+                placeholder="Enter ProductID/Barcode ID to Search Items" name="searchitems">
+        </div> -->
+        <!-- Product List Code -->
+        <table class="table table-striped table-hover mt-5">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Available Quantity</th>
+                </tr>
+            </thead>
+            <tbody id="ProductTable">
+                {% for i in productList %}
+                <tr>
+                    <td><a href="{{ url_for('product_details_page',product_id=i[0])}}">{{ i[0] }}</a></td>
+                    <td>{{ i[1] }}</td>
+                    <td>{{ i[2] }}</td>
+                    <td>{{ i[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+ 
+ 
+    {% endblock %}

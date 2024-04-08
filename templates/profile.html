@@ -1,0 +1,54 @@
+{%extends "base.html"%}
+ 
+{% block content %} 
+ 
+    <!-- body content -->
+    <div class="d-flex justify-content-center align-items-center container py-5">
+        <div class="card col-8 my-5 py-2" style="max-width: 850px;">
+        <div class=" row py-5">
+            <div class="col-md-4 text-center">
+                <!-- profile picture code  -->
+                <div class="profile-picture mx-auto mb-4">
+                    <img src="/static/profile_photo.svg" class="img-fluid" alt="Profile Picture" name="profileimg">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form action="{{url_for('profile', username=username)}}" method="get">
+                    <div class="mb-6 row">
+                        <!-- name  -->
+                        <label for="staticName" class="col-sm-4 col-form-label">Name : </label>
+                        <div class="col-sm-8 ">
+                            <input type="text" readonly class="form-control-plaintext" value="{{ user[0]}}" >
+                        </div>
+                        <!-- Designation -->
+                        <label for="staticrole" class="col-sm-4 col-form-label">Designation : </label>
+                        <div class="col-sm-8 ">
+                            {% if  user[1] == 0: %}
+                            <input type="text" readonly class="form-control-plaintext" value="Staff">
+                            {% elif user[1] == 1: %}
+                            <input type="text" readonly class="form-control-plaintext" value="Manager">
+                            {% else %}
+                            <input type="text" readonly class="form-control-plaintext" value="Super Admin">
+                            {% endif %}
+                        </div>
+                        <!-- Contact Number -->
+                        <label for="staticMob" class="col-sm-4 col-form-label">Contact Number : </label>
+                        <div class="col-sm-8 ">
+                            <input type="text" readonly class="form-control-plaintext"
+                            value="{{ user[2]}}">
+                        </div>
+                        <!-- Email ID -->
+                        <label for="staticEmail" class="col-sm-4 col-form-label ">Email ID : </label>
+                        <div class="col-sm-8 ">
+                            <input type="text" readonly class="form-control-plaintext"
+                            value="{{ user[3]}}">
+                        </div>
+                       
+                    </div>
+                </form>
+ 
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}

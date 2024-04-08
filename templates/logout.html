@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InvenTree Software</title>
+    <!-- CSS header files -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link href="/static/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="body bg-base">
+    <!-- Header  -->
+
+    <!-- navbar -->
+    <nav class="navbar bg-body-tertiary px-4 bg-base">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1 color-brand">InvenTree</span>
+        <div>
+          <a href="{{url_for('welcome')}}" class="nav-link">About Us</a>
+        </div>
+      </div>
+    </nav>
+    <!-- body content -->
+    <div class="container">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center mt-lg-5 pt-5"
+      >
+        <!-- next login page link para -->
+
+        <!-- logout page image -->
+        <img
+          src="../static/Logout.png"
+          alt="Image"
+          class="bottom-0 start-0 mb-3"
+          style="max-width: 350px"
+        />
+
+        <div class="col-md-6 text-center mt-4">
+          <h4>You have successfully logged out from the system.</h4>
+           <a class="h5 color-brand" href="{{url_for('login')}}"><u>Click here to login again</u>.</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="footer d-flex justify-content-between align-items-center px-5 py-4"
+    >
+      <p class="mb-0" style="color: white">@ 2023 InvenTree, Inc</p>
+
+      <div
+        class="d-flex justify-content-between align-items-center"
+        style="min-width: 150px"
+      >
+        <!-- <p class="mb-0 nav-link-white">Home</p> -->
+        <!-- <p class="mb-0 nav-link-white">About Us</p> -->
+      </div>
+    </footer>
+
+    <!-- JavaScript header files  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

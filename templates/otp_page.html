@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InvenTree Software</title>
+    <!-- CSS header files  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link href="/static/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-base">
+    <!-- navbar -->
+    <nav class="navbar bg-body-tertiary px-4 bg-base">
+      <div class="container-fluid">
+        <a href="/" class="navbar-brand mb-0 h1 color-brand">InvenTree</a>
+        <div>
+          <a href="/" class="nav-link">About Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="container mt-3">
+      <!-- IMG -->
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="col-6">
+          <img
+            class="verify-img"
+            src="../static/Verify_otp.svg"
+            alt="Login-page-image"
+          />
+        </div>
+
+        <div class="col-2"></div>
+
+        <!-- FORm -->
+        <div class="col-4 card d-flex align-items-center p-3 border-0 ">
+          <h3 class="color-brand mt-4">Verify It’s You</h3>
+
+          <form
+            action="{{url_for('otp_page')}}"
+            method="post"
+            class="mt-1 w-100 p-2"
+          >
+            <p class="p-2 fs-6">
+              Please check your WhatsApp with registered mobile number and Enter 4 digit OTP to verify your Identity.
+            </p>
+            <div
+              class="form-floating border-0 border-bottom border-danger mb-3"
+            >
+              <input
+                type="text"
+                class="form-control shadow-none border-0"
+                id="otp"
+                autocomplete="off"
+                name="otp"
+                required
+                placeholder="Enter OTP"
+              />
+              <label for="username">OTP</label>
+            </div>
+
+            <div class="text-md-end mt-2">
+              <a href="{{url_for('resend_otp')}}" class="color-brand">Resend OTP?</a>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %} 
+            {% if messages %} 
+            <ul  class="flashes mb-0">
+            {% for category, message in messages %}
+            <div>
+              <li class="{{category}} mb-0">{{message}}</li>
+            </div>
+            </ul>
+            {% endfor %} {% endif %} {% endwith %}
+            <button
+              type="submit"
+              class="btn btn-block w-100 mt-5 mb-4 login-btn btn-lg color-brand toggle-button"
+            >
+              Verify
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer
+    <footer class="footer">
+      <div class="container">
+        <div class="row justify-content-md-end">
+          <div class="col-auto">
+            <span class="text-bg"
+              >© Copyright Persistent Systems Pvt. Ltd. 2024</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer> -->
+    <!-- JavaScript header files -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
